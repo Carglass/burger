@@ -16,8 +16,6 @@ app.use(bodyParser.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-
-
 // Use Handlebars to render the main index.html page with the todos in it.
 app.get("/", function(req, res) {
   connection.query("SELECT * FROM plans;", function(err, data) {

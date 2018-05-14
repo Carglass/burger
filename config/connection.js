@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
   user: "root",
   password: "root",
-  database: "burger_db"
+  database: "burgers_db"
 });
 
 // connecting to the database
@@ -18,3 +18,5 @@ connection.connect(function(err) {
 
   console.log("connected as id " + connection.threadId);
 });
+
+module.exports = connection;
