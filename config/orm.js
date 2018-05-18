@@ -38,6 +38,15 @@ let orm = {
         }
       );
     });
+  },
+  deleteOne: burgerId => {
+    return new Promise((resolve, reject) => {
+      db.query("DELETE FROM burgers WHERE ?", { id: burgerId }, (err, res) => {
+        if (err) reject(err);
+        console.log("delete done");
+        resolve(res.message);
+      });
+    });
   }
 };
 
