@@ -14,7 +14,12 @@ router.get("/", (req, res) => {
 
 router.get("/api/burgers", (req, res) => {});
 
-router.post("/api/burgers", (req, res) => {});
+router.post("/api/burgers", (req, res) => {
+  console.log(req.body.name);
+  burger.burgerPromise(req.body.name).then(Burger => {
+    res.json(Burger);
+  });
+});
 
 router.put("/api/burgers/:id", (req, res) => {});
 
