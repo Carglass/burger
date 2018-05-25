@@ -2,12 +2,7 @@ var mysql = require("mysql");
 
 // initializing mySQL connection
 // TODO see how to deploy a mySQL database in Heroku
-var connection = mysql.createConnection({
-  socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
-  user: "root",
-  password: "root",
-  database: "burgers_db"
-});
+var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 // connecting to the database
 connection.connect(function(err) {
